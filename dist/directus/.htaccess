@@ -1,0 +1,3 @@
+<IfModule mod_alias.c>
+RedirectMatch 301 ^/directus/$ https://www.4fuq.com/directus/public/admin
+</IfModule>

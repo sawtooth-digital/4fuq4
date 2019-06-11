@@ -1,0 +1,361 @@
+[2019-04-15 10:23:33] api[_].ERROR: Directus\Database\Exception\DuplicateItemException: Duplicate key "5-4" for collection "directus_user_roles" in /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php:808
+Stack trace:
+#0 /home/forfuq/public_html/directus/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(264): Directus\Database\TableGateway\BaseTableGateway->executeInsert
+#1 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php(390): Zend\Db\TableGateway\AbstractTableGateway->insert
+#2 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php(364): Directus\Database\TableGateway\BaseTableGateway->addRecordByArray
+#3 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(197): Directus\Database\TableGateway\BaseTableGateway->addOrUpdateRecordByArray
+#4 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(684): Directus\Database\TableGateway\RelationalTableGateway->manageRecordUpdate
+#5 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(519): Directus\Database\TableGateway\RelationalTableGateway->addOrUpdateToManyRelationships
+#6 /home/forfuq/public_html/directus/src/core/Directus/Services/RolesService.php(106): Directus\Database\TableGateway\RelationalTableGateway->updateRecord
+#7 /home/forfuq/public_html/directus/src/endpoints/Roles.php(74): Directus\Services\RolesService->update
+#8 [internal function]: Directus\Api\Routes\Roles->update
+#9 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func
+#10 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Route.php(356): Slim\Handlers\Strategies\RequestResponse->__invoke
+#11 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\Route->__invoke
+#12 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#13 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#14 [internal function]: Slim\DeferredCallable->__invoke
+#15 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#16 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AuthenticationMiddleware.php(81): Slim\Route->Slim\{closure}
+#17 [internal function]: Directus\Application\Http\Middleware\AuthenticationMiddleware->__invoke
+#18 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#19 [internal function]: Slim\DeferredCallable->__invoke
+#20 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#21 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->Slim\{closure}
+#22 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#23 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#24 [internal function]: Slim\DeferredCallable->__invoke
+#25 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#26 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#27 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Route.php(334): Slim\Route->callMiddlewareStack
+#28 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(516): Slim\Route->run
+#29 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#30 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#31 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#32 [internal function]: Slim\DeferredCallable->__invoke
+#33 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#34 /home/forfuq/public_html/directus/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#35 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#36 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#37 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#38 [internal function]: Slim\DeferredCallable->__invoke
+#39 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#40 /home/forfuq/public_html/directus/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#41 [internal function]: RKA\Middleware\IpAddress->__invoke
+#42 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#43 [internal function]: Slim\DeferredCallable->__invoke
+#44 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#45 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(66): Slim\App->Slim\{closure}
+#46 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#47 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#48 [internal function]: Slim\DeferredCallable->__invoke
+#49 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#50 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(47): Slim\App->Slim\{closure}
+#51 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#52 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#53 [internal function]: Slim\DeferredCallable->__invoke
+#54 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#55 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#56 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(407): Slim\App->callMiddlewareStack
+#57 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(315): Slim\App->process
+#58 /home/forfuq/public_html/directus/src/core/Directus/Application/Application.php(161): Slim\App->run
+#59 /home/forfuq/public_html/directus/public/index.php(5): Directus\Application\Application->run [] []
+[2019-04-15 10:24:37] api[_].ERROR: Directus\Database\Exception\DuplicateItemException: Duplicate key "5-4" for collection "directus_user_roles" in /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php:808
+Stack trace:
+#0 /home/forfuq/public_html/directus/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(264): Directus\Database\TableGateway\BaseTableGateway->executeInsert
+#1 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php(390): Zend\Db\TableGateway\AbstractTableGateway->insert
+#2 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php(364): Directus\Database\TableGateway\BaseTableGateway->addRecordByArray
+#3 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(197): Directus\Database\TableGateway\BaseTableGateway->addOrUpdateRecordByArray
+#4 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(684): Directus\Database\TableGateway\RelationalTableGateway->manageRecordUpdate
+#5 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(519): Directus\Database\TableGateway\RelationalTableGateway->addOrUpdateToManyRelationships
+#6 /home/forfuq/public_html/directus/src/core/Directus/Services/RolesService.php(106): Directus\Database\TableGateway\RelationalTableGateway->updateRecord
+#7 /home/forfuq/public_html/directus/src/endpoints/Roles.php(74): Directus\Services\RolesService->update
+#8 [internal function]: Directus\Api\Routes\Roles->update
+#9 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func
+#10 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Route.php(356): Slim\Handlers\Strategies\RequestResponse->__invoke
+#11 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\Route->__invoke
+#12 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#13 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#14 [internal function]: Slim\DeferredCallable->__invoke
+#15 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#16 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AuthenticationMiddleware.php(81): Slim\Route->Slim\{closure}
+#17 [internal function]: Directus\Application\Http\Middleware\AuthenticationMiddleware->__invoke
+#18 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#19 [internal function]: Slim\DeferredCallable->__invoke
+#20 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#21 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->Slim\{closure}
+#22 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#23 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#24 [internal function]: Slim\DeferredCallable->__invoke
+#25 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#26 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#27 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Route.php(334): Slim\Route->callMiddlewareStack
+#28 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(516): Slim\Route->run
+#29 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#30 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#31 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#32 [internal function]: Slim\DeferredCallable->__invoke
+#33 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#34 /home/forfuq/public_html/directus/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#35 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#36 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#37 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#38 [internal function]: Slim\DeferredCallable->__invoke
+#39 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#40 /home/forfuq/public_html/directus/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#41 [internal function]: RKA\Middleware\IpAddress->__invoke
+#42 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#43 [internal function]: Slim\DeferredCallable->__invoke
+#44 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#45 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(66): Slim\App->Slim\{closure}
+#46 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#47 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#48 [internal function]: Slim\DeferredCallable->__invoke
+#49 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#50 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(47): Slim\App->Slim\{closure}
+#51 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#52 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#53 [internal function]: Slim\DeferredCallable->__invoke
+#54 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#55 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#56 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(407): Slim\App->callMiddlewareStack
+#57 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(315): Slim\App->process
+#58 /home/forfuq/public_html/directus/src/core/Directus/Application/Application.php(161): Slim\App->run
+#59 /home/forfuq/public_html/directus/public/index.php(5): Directus\Application\Application->run [] []
+[2019-04-15 10:24:58] api[_].ERROR: Directus\Database\Exception\DuplicateItemException: Duplicate key "6-1" for collection "directus_user_roles" in /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php:808
+Stack trace:
+#0 /home/forfuq/public_html/directus/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(264): Directus\Database\TableGateway\BaseTableGateway->executeInsert
+#1 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php(390): Zend\Db\TableGateway\AbstractTableGateway->insert
+#2 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php(364): Directus\Database\TableGateway\BaseTableGateway->addRecordByArray
+#3 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(197): Directus\Database\TableGateway\BaseTableGateway->addOrUpdateRecordByArray
+#4 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(684): Directus\Database\TableGateway\RelationalTableGateway->manageRecordUpdate
+#5 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(519): Directus\Database\TableGateway\RelationalTableGateway->addOrUpdateToManyRelationships
+#6 /home/forfuq/public_html/directus/src/core/Directus/Services/RolesService.php(106): Directus\Database\TableGateway\RelationalTableGateway->updateRecord
+#7 /home/forfuq/public_html/directus/src/endpoints/Roles.php(74): Directus\Services\RolesService->update
+#8 [internal function]: Directus\Api\Routes\Roles->update
+#9 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func
+#10 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Route.php(356): Slim\Handlers\Strategies\RequestResponse->__invoke
+#11 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\Route->__invoke
+#12 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#13 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#14 [internal function]: Slim\DeferredCallable->__invoke
+#15 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#16 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AuthenticationMiddleware.php(81): Slim\Route->Slim\{closure}
+#17 [internal function]: Directus\Application\Http\Middleware\AuthenticationMiddleware->__invoke
+#18 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#19 [internal function]: Slim\DeferredCallable->__invoke
+#20 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#21 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->Slim\{closure}
+#22 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#23 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#24 [internal function]: Slim\DeferredCallable->__invoke
+#25 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#26 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#27 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Route.php(334): Slim\Route->callMiddlewareStack
+#28 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(516): Slim\Route->run
+#29 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#30 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#31 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#32 [internal function]: Slim\DeferredCallable->__invoke
+#33 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#34 /home/forfuq/public_html/directus/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#35 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#36 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#37 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#38 [internal function]: Slim\DeferredCallable->__invoke
+#39 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#40 /home/forfuq/public_html/directus/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#41 [internal function]: RKA\Middleware\IpAddress->__invoke
+#42 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#43 [internal function]: Slim\DeferredCallable->__invoke
+#44 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#45 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(66): Slim\App->Slim\{closure}
+#46 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#47 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#48 [internal function]: Slim\DeferredCallable->__invoke
+#49 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#50 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(47): Slim\App->Slim\{closure}
+#51 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#52 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#53 [internal function]: Slim\DeferredCallable->__invoke
+#54 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#55 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#56 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(407): Slim\App->callMiddlewareStack
+#57 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(315): Slim\App->process
+#58 /home/forfuq/public_html/directus/src/core/Directus/Application/Application.php(161): Slim\App->run
+#59 /home/forfuq/public_html/directus/public/index.php(5): Directus\Application\Application->run [] []
+[2019-04-15 10:26:36] api[_].ERROR: Directus\Database\Exception\DuplicateItemException: Duplicate key "7-1" for collection "directus_user_roles" in /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php:808
+Stack trace:
+#0 /home/forfuq/public_html/directus/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(264): Directus\Database\TableGateway\BaseTableGateway->executeInsert
+#1 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php(390): Zend\Db\TableGateway\AbstractTableGateway->insert
+#2 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php(364): Directus\Database\TableGateway\BaseTableGateway->addRecordByArray
+#3 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(197): Directus\Database\TableGateway\BaseTableGateway->addOrUpdateRecordByArray
+#4 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(684): Directus\Database\TableGateway\RelationalTableGateway->manageRecordUpdate
+#5 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(519): Directus\Database\TableGateway\RelationalTableGateway->addOrUpdateToManyRelationships
+#6 /home/forfuq/public_html/directus/src/core/Directus/Services/RolesService.php(106): Directus\Database\TableGateway\RelationalTableGateway->updateRecord
+#7 /home/forfuq/public_html/directus/src/endpoints/Roles.php(74): Directus\Services\RolesService->update
+#8 [internal function]: Directus\Api\Routes\Roles->update
+#9 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func
+#10 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Route.php(356): Slim\Handlers\Strategies\RequestResponse->__invoke
+#11 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\Route->__invoke
+#12 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#13 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#14 [internal function]: Slim\DeferredCallable->__invoke
+#15 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#16 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AuthenticationMiddleware.php(81): Slim\Route->Slim\{closure}
+#17 [internal function]: Directus\Application\Http\Middleware\AuthenticationMiddleware->__invoke
+#18 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#19 [internal function]: Slim\DeferredCallable->__invoke
+#20 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#21 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->Slim\{closure}
+#22 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#23 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#24 [internal function]: Slim\DeferredCallable->__invoke
+#25 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#26 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#27 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Route.php(334): Slim\Route->callMiddlewareStack
+#28 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(516): Slim\Route->run
+#29 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#30 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#31 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#32 [internal function]: Slim\DeferredCallable->__invoke
+#33 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#34 /home/forfuq/public_html/directus/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#35 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#36 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#37 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#38 [internal function]: Slim\DeferredCallable->__invoke
+#39 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#40 /home/forfuq/public_html/directus/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#41 [internal function]: RKA\Middleware\IpAddress->__invoke
+#42 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#43 [internal function]: Slim\DeferredCallable->__invoke
+#44 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#45 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(66): Slim\App->Slim\{closure}
+#46 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#47 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#48 [internal function]: Slim\DeferredCallable->__invoke
+#49 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#50 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(47): Slim\App->Slim\{closure}
+#51 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#52 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#53 [internal function]: Slim\DeferredCallable->__invoke
+#54 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#55 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#56 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(407): Slim\App->callMiddlewareStack
+#57 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(315): Slim\App->process
+#58 /home/forfuq/public_html/directus/src/core/Directus/Application/Application.php(161): Slim\App->run
+#59 /home/forfuq/public_html/directus/public/index.php(5): Directus\Application\Application->run [] []
+[2019-04-15 10:27:10] api[_].ERROR: Directus\Database\Exception\DuplicateItemException: Duplicate key "5-1" for collection "directus_user_roles" in /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php:808
+Stack trace:
+#0 /home/forfuq/public_html/directus/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(264): Directus\Database\TableGateway\BaseTableGateway->executeInsert
+#1 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php(390): Zend\Db\TableGateway\AbstractTableGateway->insert
+#2 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/BaseTableGateway.php(364): Directus\Database\TableGateway\BaseTableGateway->addRecordByArray
+#3 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(197): Directus\Database\TableGateway\BaseTableGateway->addOrUpdateRecordByArray
+#4 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(684): Directus\Database\TableGateway\RelationalTableGateway->manageRecordUpdate
+#5 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(228): Directus\Database\TableGateway\RelationalTableGateway->addOrUpdateToManyRelationships
+#6 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(608): Directus\Database\TableGateway\RelationalTableGateway->manageRecordUpdate
+#7 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(170): Directus\Database\TableGateway\RelationalTableGateway->addOrUpdateManyToOneRelationships
+#8 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(684): Directus\Database\TableGateway\RelationalTableGateway->manageRecordUpdate
+#9 /home/forfuq/public_html/directus/src/core/Directus/Database/TableGateway/RelationalTableGateway.php(519): Directus\Database\TableGateway\RelationalTableGateway->addOrUpdateToManyRelationships
+#10 /home/forfuq/public_html/directus/src/core/Directus/Services/RolesService.php(106): Directus\Database\TableGateway\RelationalTableGateway->updateRecord
+#11 /home/forfuq/public_html/directus/src/endpoints/Roles.php(74): Directus\Services\RolesService->update
+#12 [internal function]: Directus\Api\Routes\Roles->update
+#13 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func
+#14 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Route.php(356): Slim\Handlers\Strategies\RequestResponse->__invoke
+#15 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\Route->__invoke
+#16 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#17 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#18 [internal function]: Slim\DeferredCallable->__invoke
+#19 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#20 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AuthenticationMiddleware.php(81): Slim\Route->Slim\{closure}
+#21 [internal function]: Directus\Application\Http\Middleware\AuthenticationMiddleware->__invoke
+#22 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#23 [internal function]: Slim\DeferredCallable->__invoke
+#24 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#25 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->Slim\{closure}
+#26 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#27 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#28 [internal function]: Slim\DeferredCallable->__invoke
+#29 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#30 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#31 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Route.php(334): Slim\Route->callMiddlewareStack
+#32 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(516): Slim\Route->run
+#33 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#34 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#35 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#36 [internal function]: Slim\DeferredCallable->__invoke
+#37 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#38 /home/forfuq/public_html/directus/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#39 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#40 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#41 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#42 [internal function]: Slim\DeferredCallable->__invoke
+#43 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#44 /home/forfuq/public_html/directus/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#45 [internal function]: RKA\Middleware\IpAddress->__invoke
+#46 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#47 [internal function]: Slim\DeferredCallable->__invoke
+#48 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#49 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(66): Slim\App->Slim\{closure}
+#50 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#51 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#52 [internal function]: Slim\DeferredCallable->__invoke
+#53 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#54 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(47): Slim\App->Slim\{closure}
+#55 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#56 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#57 [internal function]: Slim\DeferredCallable->__invoke
+#58 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#59 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#60 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(407): Slim\App->callMiddlewareStack
+#61 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(315): Slim\App->process
+#62 /home/forfuq/public_html/directus/src/core/Directus/Application/Application.php(161): Slim\App->run
+#63 /home/forfuq/public_html/directus/public/index.php(5): Directus\Application\Application->run [] []
+[2019-04-15 12:07:07] api[_].ERROR: Directus\Authentication\Exception\InvalidUserCredentialsException: Invalid user credentials in /home/forfuq/public_html/directus/src/core/Directus/Authentication/Provider.php:156
+Stack trace:
+#0 /home/forfuq/public_html/directus/src/core/Directus/Authentication/Provider.php(116): Directus\Authentication\Provider->findUserWithCredentials
+#1 /home/forfuq/public_html/directus/src/core/Directus/Services/AuthService.php(47): Directus\Authentication\Provider->login
+#2 /home/forfuq/public_html/directus/src/endpoints/Auth.php(49): Directus\Services\AuthService->loginWithCredentials
+#3 [internal function]: Directus\Api\Routes\Auth->authenticate
+#4 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func
+#5 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Route.php(356): Slim\Handlers\Strategies\RequestResponse->__invoke
+#6 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->__invoke
+#7 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#8 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#9 [internal function]: Slim\DeferredCallable->__invoke
+#10 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#11 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#12 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/Route.php(334): Slim\Route->callMiddlewareStack
+#13 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(516): Slim\Route->run
+#14 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#15 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#16 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#17 [internal function]: Slim\DeferredCallable->__invoke
+#18 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#19 /home/forfuq/public_html/directus/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#20 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#21 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#22 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#23 [internal function]: Slim\DeferredCallable->__invoke
+#24 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#25 /home/forfuq/public_html/directus/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#26 [internal function]: RKA\Middleware\IpAddress->__invoke
+#27 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#28 [internal function]: Slim\DeferredCallable->__invoke
+#29 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#30 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(66): Slim\App->Slim\{closure}
+#31 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#32 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#33 [internal function]: Slim\DeferredCallable->__invoke
+#34 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#35 /home/forfuq/public_html/directus/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(47): Slim\App->Slim\{closure}
+#36 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#37 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array
+#38 [internal function]: Slim\DeferredCallable->__invoke
+#39 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#40 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#41 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(407): Slim\App->callMiddlewareStack
+#42 /home/forfuq/public_html/directus/vendor/slim/slim/Slim/App.php(315): Slim\App->process
+#43 /home/forfuq/public_html/directus/src/core/Directus/Application/Application.php(161): Slim\App->run
+#44 /home/forfuq/public_html/directus/public/index.php(5): Directus\Application\Application->run [] []
